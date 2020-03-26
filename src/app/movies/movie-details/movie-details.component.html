@@ -1,0 +1,89 @@
+<div class="card bg-dark text-white">
+    <img class="card-img" src="{{moviedetail.backdropUrl}}" alt="Card image">
+    <div class = "card-img-overlay">
+        <div class="row">
+            <div class="col-md-3 offset-2">
+
+                <!-- Movie Card row -->
+                <div class="float-sm-left">
+                    <img src="{{moviedetail.posterUrl}}" class="card-img-top rounded" />
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="row mt-2">
+                    <div class="col-12">
+                        <h1 class="text-white">
+                            {{moviedetail.title}}
+                        </h1>
+                        <small class="text-muted"> {{moviedetail.tagline}} </small>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-4 text-secondary font-weight-bold mt-2">
+                        {{moviedetail.runTime}}m | {{year}}
+                    </div>
+                    <div class="col-8">
+                        <div *ngFor="let genre of moviedetail.genres">
+                            <a href="#" [routerLink]="['/genre/', moviedetail.id]"
+                                class="badge badge-pill badge-dark ml-1">
+                                {{genre.name}}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-4 mt-3">
+                        <h4>
+                            <span class="badge badge-warning">
+                                {{moviedetail.rating}}
+
+                            </span>
+                        </h4>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="text-white" style="background-color: rgba(0, 0, 0, 0.51);">
+                        {{moviedetail.overview}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2 mt-4 offset-1">
+                <ul class="list-group text-primary">
+                    <li class="list-group-item">
+
+
+                    </li>
+                    <li class="list-group-item">
+                        <button type="button" class="btn btn-outline-primary btn-lg btn-block btn-sm">
+                            <i class="far fa-edit mr-1"></i>
+                            REVIEW
+                        </button>
+                    </li>
+                    <li class="list-group-item">
+                        <button type="button" class="btn btn-outline-primary btn-lg btn-block btn-sm">
+                            <i class="fas fa-play mr-1"></i> TRAILER
+                        </button>
+                    </li>
+
+                    <li class="list-group-item">
+                        <button type="button" class="btn btn-primary btn-lg btn-block btn-sm">
+                            <i class="fas fa-shopping-cart"></i>BUY {{moviedetail.price}}
+                        </button>
+
+                        <button type="button" class="btn btn-primary btn-lg btn-block btn-sm">
+                            WATCH MOVIE
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
